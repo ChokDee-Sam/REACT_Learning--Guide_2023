@@ -1,0 +1,59 @@
+----------------------------
+Les Composants
+----------------------------
+
+On utilise le Pascal case pour :
+- le nom de nos composants
+- le nom des fonctions à l'intérieur des fichiers
+
+Un composant  = une fonction (avant c'était des classes)
+
+Balise auto fermante si rien à l'intérieur (pas d'enfant)
+
+
+----------------------------
+Les imports exports
+----------------------------
+
+    import {bike, drive} from "./emplacement"
+
+export const bike = "Royal Enfield"
+export function drive() {}
+
+[ou bien, ne pas utiliser le mot 'export' avant un emplacement
+mais les regrouper dans un export multiple]
+    export {bike, drive}
+
+[Ou bien un seul export par default,
+qui permet d'importer en changeant le nom (attention aux erreurs)]
+    export default bike
+    import aaaaaaaa from "./emplacement"
+
+[ou bien mixer les 2]
+    import aaaaaaaa, {bike, drive} from "./emplacement"
+
+
+
+----------------------------
+Render
+----------------------------
+
+Ce qu'on peut Render :
+    - String, Number, les arrays (sous conditions), html, jsx
+
+Ce qu'on ne peut pas Render :
+    - Boolean, Undefined, Null
+
+Ce qui fait cracher le Render
+    - Les Objets (sans entrer à l'intérieur)
+
+
+----------------------------
+Render du JSX
+----------------------------
+
+- Il faut un parent dès 2 élements enfants cote à cote
+- Si élément parent 'inutile', utiliser un fragment <> (invisible dans le html)
+
+- On écrit le JSX en camelCase (malgré quelques exceptions)
+- Possibilité de mixer du HTML et des composants importés, eux même importer (inception)
