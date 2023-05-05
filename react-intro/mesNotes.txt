@@ -70,3 +70,45 @@ ctrl + shift + p
 
 ctrl + shift + p
   Verifier les settings user en json
+
+
+----------------------------
+Les Props : les définir
+----------------------------
+
+Suite à notre import, lors de notre code, on peut envoyer plusieurs types de données
+    (string, number, objets, function, jsx comme une image, etc...)
+
+Pour les afficher :  
+    Ajouter le paramètre props dans fonction du fichier d'export + console.log(props)
+
+Lors du console log, on verra le JSX qu'on a passé en props
+
+
+----------------------------
+Les Props : les utiliser
+----------------------------
+
+Pour utiliser nos éléments dans la fonction 
+    {props.elementName}
+
+
+----------------------------
+Les Props : Read Only !
+----------------------------
+
+Les Props ne peuvent pas être modifiées comme une variable
+  props.age = props.age+10
+Cet exemple est impossible 
+
+
+----------------------------
+Les Props : children
+----------------------------
+
+Si on souhaite intégrer un children 
+  On écrit simplement notre JSX (dans le lieu d'exportation)
+    mais on ajoute { props.childen }  (dans notre function à exporter)
+
+On peut vérifier dans le console.log (props)
+  il y a une nouvelle propriété : children
