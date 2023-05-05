@@ -2,9 +2,13 @@
 import { AgeCounter } from "./AgeCounter";
 import { Bonjour } from "./Components/Bonjour/Bonjour";
 import { Car } from "./Components/Car/Car";
-import "./global.css"
+import "./global.css";
 
 export function App() {
+  function hello(number) {
+    alert("Hello de <App/>" + number);
+  }
+
   return (
     <div
       style={{
@@ -42,10 +46,14 @@ export function App() {
 
       <AgeCounter />
 
-      <Car/>
-      <Bonjour/>
+      <div>
+        Je suis {"<App/>"}
+        {/* <button onClick={hello}>click</button> */}
+      </div>
 
+      <Car onCarClick={hello} />
 
+      <Bonjour />
     </div>
   );
 }

@@ -271,3 +271,48 @@ Pas Génial...
 
 Plutôt utiliser des backticks + template literal + espace
    className={`${nomEx.nomDeClass} ${nomEx.nomDeClass}`}
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Les Callback Functions
+-----------------------------------------------------
+-----------------------------------------------------
+
+C'est un moyen de faire communiquer un parent avec son enfant, 
+via des fonctions
+
+Une fonction Callback, comme toutes les fonctions, peut être call plusieurs fois
+
+Plutot que d'appeler une fonction dans un element, on peut 
+  Dans notre fichier Composant (Car)
+  <button onClick={props.onCarClick}> Click </button>
+
+  Dans notre App :
+  <Car onCarClick= {nomDeFonctionDansLeFichierApp} />
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Les Callback Functions avec paramètres : retarder l'appel 
+-----------------------------------------------------
+-----------------------------------------------------
+
+Mettre de parenthese avec info dans les fonctions à call = declenchement direct
+Donc si on attend un Event, comme un click, aucun interet à en mettre un
+
+De ce fait, dans notre fichier Composant (car), faire une fonction avec paramètre
+(fonction flêchée ou non, aucune différence maintenant, comparé à avant avec class )
+  function onClick() {
+    props.OnCarClick(10)
+  }
+
+Et l'appeler plus loin dans notre Composant, non pas par une props comme avant,
+(car la props a déjà été écrite dans la fonction)
+  <button onClick={props.onCarClick}> Click </button>
+Mais plutôt avec :
+  <button onClick={onClick}> Click </button>
+
+Sinon, sans même utiliser de function onClick, 
+on peut, dans notre bouton, faire une fonction flêchée, avec ou sans accolade
+(Par contre, c'est un peu moins performant qu'une fonction en dehors)
