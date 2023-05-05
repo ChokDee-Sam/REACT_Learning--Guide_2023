@@ -1,12 +1,18 @@
-import { Greetings } from "./Greetings";
+// import { Greetings } from "./Greetings";
+import { AgeCounter } from "./AgeCounter";
 
 export function App() {
   return (
     <>
       <h1>Hello to the React World</h1>
-      <Greetings
+
+      {/* ------------------------------------------- */}
+      {/* Premier projet */}
+      {/* ------------------------------------------- */}
+
+      {/* <Greetings
         firstName={"Rachel"}
-        age={30}
+        age={40}
         moto={{ color: "brown", year: 2022 }}
         doSomething={function () {
           console.log("hey");
@@ -17,7 +23,13 @@ export function App() {
             alt="exemple"
           />
         }
-      />
+        isSunny // sous-entend "true"
+      /> */}
+      {/* ------------------------------------------- */}
+      {/* Premier projet : FIN */}
+      {/* ------------------------------------------- */}
+
+      <AgeCounter/>
     </>
   );
 }

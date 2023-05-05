@@ -1,6 +1,8 @@
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Les Composants
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
 On utilise le Pascal case pour :
 - le nom de nos composants
@@ -11,9 +13,11 @@ Un composant  = une fonction (avant c'était des classes)
 Balise auto fermante si rien à l'intérieur (pas d'enfant)
 
 
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Les imports exports
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
     import {bike, drive} from "./emplacement"
 
@@ -33,10 +37,11 @@ qui permet d'importer en changeant le nom (attention aux erreurs)]
     import aaaaaaaa, {bike, drive} from "./emplacement"
 
 
-
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Render
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
 Ce qu'on peut Render :
     - String, Number, les arrays (sous conditions), html, jsx
@@ -48,9 +53,11 @@ Ce qui fait cracher le Render
     - Les Objets (sans entrer à l'intérieur)
 
 
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Render du JSX
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
 - Il faut un parent dès 2 élements enfants cote à cote
 - Si élément parent 'inutile', utiliser un fragment <> (invisible dans le html)
@@ -59,9 +66,11 @@ Render du JSX
 - Possibilité de mixer du HTML et des composants importés, eux même importer (inception)
 
 
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Formater son code
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
 ctrl + shift + p
   Écrire 'format'
@@ -72,11 +81,13 @@ ctrl + shift + p
   Verifier les settings user en json
 
 
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Les Props : les définir
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
-Suite à notre import, lors de notre code, on peut envoyer plusieurs types de données
+Suite à notre import, lors de notre code, on peut envoyer tous types de données
     (string, number, objets, function, jsx comme une image, etc...)
 
 Pour les afficher :  
@@ -85,26 +96,32 @@ Pour les afficher :
 Lors du console log, on verra le JSX qu'on a passé en props
 
 
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Les Props : les utiliser
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
 Pour utiliser nos éléments dans la fonction 
     {props.elementName}
 
 
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Les Props : Read Only !
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
 Les Props ne peuvent pas être modifiées comme une variable
   props.age = props.age+10
-Cet exemple est impossible 
+Cet exemple est impossible : les Props ne peuvent pas muter !
 
 
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 Les Props : children
-----------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 
 Si on souhaite intégrer un children 
   On écrit simplement notre JSX (dans le lieu d'exportation)
@@ -112,3 +129,84 @@ Si on souhaite intégrer un children
 
 On peut vérifier dans le console.log (props)
   il y a une nouvelle propriété : children
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Conditional Rendering
+-----------------------------------------------------
+-----------------------------------------------------
+
+Une condition de render est possible dans notre function avant export
+  - Par exemple un classique if / else, ou un autre du style :
+  - <li> { props.fonction && "il fait beau} </li>
+
+Les conditions peuvent provenir du fichier à exporter,
+  avec des conditions issus de la fonction, ou d'autres fonctions 
+    (attention aux majuscule des noms de fonctions !)
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Les Variables dans un Composant
+-----------------------------------------------------
+-----------------------------------------------------
+
+Les variables qu'on a dans un Composant ne sont pas reactive
+    Donc : pas de re-Rendering du Composant
+
+Pour ça : on a besoin des States
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Les States : permet un changement, une réactivité
+-----------------------------------------------------
+-----------------------------------------------------
+
+Une actualisation = rafraichissement = un re-Render
+
+Le State change = le Composant re-Render
+
+Du coup, un composant va re-Render quand :
+  - ses States changent 
+  - ses Props changent
+
+Modifier la valeur d'un state par affectation = de re-Rendering 
+  Pour ça : utilise le setter ! (setMot)
+
+TOUJOURS passer par une fonction pour modifier une valeur
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Les States : le nommage
+-----------------------------------------------------
+-----------------------------------------------------
+
+Utiliser la convention de nommage
+  const [mot, setMot] = useState(10)
+
+mot = valeur
+setMot = function pour modifier la valeur
+useState(valeur) = valeur initiale
+
+C'est un des Hooks de React (il y en a plusieurs)
+
+Ne pas oublier de l'importer
+    import { useState } from "react";
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Les States : Warning
+-----------------------------------------------------
+-----------------------------------------------------
+
+Attention à ne pas tomber dans une boucle infinie d'erreur :
+    ne pas setter dans un corps de composant (function) (où ça render)
+
+Le Render peut prendre un certain temps (comme une promesse) :
+    - On évite les console.log() de Set juste après un setter
+    - On console.log() en dehors de la fonction (mais tjr dans le Composant)
+    - On utilisera plus tard un useEffect (un outil pour 'écouter')
