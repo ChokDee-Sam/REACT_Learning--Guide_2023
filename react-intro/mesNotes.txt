@@ -57,3 +57,16 @@ Render du JSX
 
 - On écrit le JSX en camelCase (malgré quelques exceptions)
 - Possibilité de mixer du HTML et des composants importés, eux même importer (inception)
+
+
+----------------------------
+Formater son code
+----------------------------
+
+ctrl + shift + p
+  Écrire 'format'
+    Choisir la ligne correspond
+      Choisir son outil de formatage
+
+ctrl + shift + p
+  Verifier les settings user en json
