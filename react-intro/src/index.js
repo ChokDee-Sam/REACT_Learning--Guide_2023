@@ -1,6 +1,6 @@
 // Recréer ce que Create-React-App auto-genère
 
-// 1 - importer les outils React
+// 1 - Importer les outils React
 import ReactDOM from "react-dom";
 
 // 2 - Importer notre premier composant
