@@ -15,6 +15,16 @@ Balise auto fermante si rien à l'intérieur (pas d'enfant)
 
 -----------------------------------------------------
 -----------------------------------------------------
+Le placement des Composants 
+-----------------------------------------------------
+-----------------------------------------------------
+
+Dans un dossier "components", 
+  puis, dans un dossier qui aura le même nom que le fichier
+
+
+-----------------------------------------------------
+-----------------------------------------------------
 Les imports exports
 -----------------------------------------------------
 -----------------------------------------------------
@@ -210,3 +220,54 @@ Le Render peut prendre un certain temps (comme une promesse) :
     - On évite les console.log() de Set juste après un setter
     - On console.log() en dehors de la fonction (mais tjr dans le Composant)
     - On utilisera plus tard un useEffect (un outil pour 'écouter')
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Le Style : Inline CSS (JSS)
+-----------------------------------------------------
+-----------------------------------------------------
+
+Utiliser du camelCase
+Possibilité de conditions (ternaire)
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Le Style : Fichier CSS
+-----------------------------------------------------
+-----------------------------------------------------
+
+On commence par importer notre fichier css
+    import"./style.css"
+
+Puis on ajoute où l'on désire notre css, par exemple
+    return <div className="uneClasseDeNotreFichierCss"
+
+Important : on doit importer le fichier avant les autres,
+  afin de pouvoir utiliser les styles dans d'autres Composants
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+Le Style : CSS Modules (super pour éviter les conflits)
+-----------------------------------------------------
+-----------------------------------------------------
+
+On le nomme avec .module
+    style.module.css
+
+On l'importe dans notre composant
+  import nomDexemple from "./style.modules.css
+
+Et on l'utilise 
+  export function Car() {
+    return <div className={nomDexemple.nomDeClass} />
+  }
+
+Pour utiliser plusieurs css dans un element (penser espace)
+   className={nomEx.nomDeClass + " " + nomEx.nomDeClass}
+Pas Génial...
+
+Plutôt utiliser des backticks + template literal + espace
+   className={`${nomEx.nomDeClass} ${nomEx.nomDeClass}`}
