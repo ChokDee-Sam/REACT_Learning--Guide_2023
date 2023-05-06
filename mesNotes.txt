@@ -1,4 +1,43 @@
+--------------------------------------------------
+
 Revoir la partie de l'index.js
+
+--------------------------------------------------
 
 hover : onMouseEnter / onMouseLeave
 
+--------------------------------------------------
+--------------------------------------------------
+
+            Render Array : aider React
+
+
+Pour render un array : 
+  chaque element doit avoir un attribut key unique
+
+const array = [
+      <h1 key="title">I am a title</h1>
+      <p key="paragraph">I am a paragraph</p>
+      <div key="div">I am a div</div>
+]
+
+--------------------------------------------------
+--------------------------------------------------
+
+            .map()
+
+Pour return directement, 
+      après la flêche => ()
+            ouvrir les parenthèses, pas les accolades
+
+Pour return manuellement, où l'on souhaite,
+      après la flêche => {
+            return(
+                  .....
+            )
+      }
+
+Écrire soi-même le return permet d'écrire du code avant !
+
+--------------------------------------------------
+--------------------------------------------------

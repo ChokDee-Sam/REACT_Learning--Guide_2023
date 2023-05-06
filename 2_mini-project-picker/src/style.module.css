@@ -1,3 +1,7 @@
+div {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .workspace {
   display: flex;
   justify-content: space-evenly;
@@ -5,8 +9,4 @@
 
 .title {
   text-align: center;
-}
-
-div {
-  font-family: Arial, Helvetica, sans-serif;
 }
