@@ -5,7 +5,7 @@ export function DisplayDifficulty(props) {
     <div className={s.container}>
       {props.difficulty
         ? `Difficulty set to : ${props.difficulty}`
-        : "Select a difficulty"}
+        : "No difficulty set"}
     </div>
   );
 }

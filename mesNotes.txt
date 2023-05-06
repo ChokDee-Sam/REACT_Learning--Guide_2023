@@ -2,8 +2,3 @@ Revoir la partie de l'index.js
 
 hover : onMouseEnter / onMouseLeave
 
-
-1 - On a display un texte de difficulté qui change selon une props
-2 - On a crée un element avec un hover
-3 - On a duppliquer cet element pour faire une liste
-      qui display un affichage de difficulté selon la props

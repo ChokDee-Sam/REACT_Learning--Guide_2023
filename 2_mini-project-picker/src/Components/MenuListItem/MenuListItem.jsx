@@ -1,17 +1,28 @@
-import { useState } from "react";
 import s from "./style.module.css";
+import { useState } from "react";
 
-export function MenuListItem(props) {
+export function MenuListItem({ onClick, difficulty, isSelected }) {
+  function getBackgroundColor() {
+    if (isSelected) {
+      return "#26baea";
+    } else if (isHovered) {
+      return "#a5e9ff";
+    } else {
+      return "#eff0ef";
+    }
+  }
+
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-    style={{backgroundColor: isHovered ? "#a5e9ff" : "#eff0ef"}}
       className={s.container}
+      style={{ backgroundColor: getBackgroundColor() }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => onClick(difficulty)}
     >
-      Set to : {props.difficulty}
+      Set to : {difficulty}
     </div>
   );
 }
